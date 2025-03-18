@@ -32,11 +32,15 @@ jobs:
           services: |
             build-portal
 
+      - name: Sleep for 3 minutes
+        run: sleep 180s
+        shell: bash
+
       - name: Upload artifact
         if: steps.docker-compose.outputs.exit_code == 0
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public_site
+          path: public_site
 
   # Deployment job
   deploy:
