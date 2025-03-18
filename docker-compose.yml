@@ -16,7 +16,7 @@ services:
       sh -c "node --experimental-modules copy-cspell.mjs && node validate-format.js && node generate-api-cards.js &&
         npm run lint:markdown &&
         npm run lint:run-cspell &&
-        poetry run mkdocs build --strict --config-file mkdocs-develop.yml --verbose"
+        poetry run mkdocs build --strict --config-file mkdocs-develop.yml"
   run-portal:
     <<: *build
     ports:
